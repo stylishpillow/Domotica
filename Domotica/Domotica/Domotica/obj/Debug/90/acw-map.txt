@@ -1,0 +1,3 @@
+Domotica.MainActivity, Domotica;crc64779b96b4043560ba.MainActivity
+Domotica.MainActivity;crc64779b96b4043560ba.MainActivity
+domotica.MainActivity;crc64779b96b4043560ba.MainActivity
