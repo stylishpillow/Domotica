@@ -358,3 +358,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+*.suo
+Domotica/Domotica/.vs/Domotica/v16/.suo
+Domotica/Domotica/Domotica.v12.suo
