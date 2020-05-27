@@ -1,9 +1,8 @@
 *.suo
-
+obj/
 .vs/
 Domotica/.vs
 [Dd]ebug/
 [Dd]ebugPublic/
 bin/
-Domotica/Domotica/.vs/Domotica/v16/.suo
 v16/
