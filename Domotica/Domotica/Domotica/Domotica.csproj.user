@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
-    <SelectedDevice>pixel_3_xl_pie_9_0_-_api_28</SelectedDevice>
-    <DefaultDevice>pixel_3_xl_pie_9_0_-_api_28</DefaultDevice>
+    <SelectedDevice>pixel_3_pie_9_0_-_api_28</SelectedDevice>
+    <DefaultDevice>pixel_3_pie_9_0_-_api_28</DefaultDevice>
   </PropertyGroup>
 </Project>
