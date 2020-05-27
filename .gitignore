@@ -1,6 +1,7 @@
+*.suo
+
 .vs/
 Domotica/.vs
-
 [Dd]ebug/
 [Dd]ebugPublic/
 bin/
