@@ -19,18 +19,19 @@ public final class R {
     public static final int editTextIPPort=0x7f020004;
     public static final int exit=0x7f020005;
     public static final int relativeLayout1=0x7f020006;
-    public static final int textViewChangePinState=0x7f020007;
-    public static final int textViewChangePinStateValue=0x7f020008;
-    public static final int textViewDebug=0x7f020009;
-    public static final int textViewDebugValue=0x7f02000a;
-    public static final int textViewIPAddress=0x7f02000b;
-    public static final int textViewIPPort=0x7f02000c;
-    public static final int textViewSensor=0x7f02000d;
-    public static final int textViewSensorValue=0x7f02000e;
-    public static final int textViewServer=0x7f02000f;
-    public static final int textViewServerConnect=0x7f020010;
-    public static final int textViewTimerState=0x7f020011;
-    public static final int textViewTimerStateValue=0x7f020012;
+    public static final int seekBar1=0x7f020007;
+    public static final int textViewChangePinState=0x7f020008;
+    public static final int textViewChangePinStateValue=0x7f020009;
+    public static final int textViewDebug=0x7f02000a;
+    public static final int textViewDebugValue=0x7f02000b;
+    public static final int textViewIPAddress=0x7f02000c;
+    public static final int textViewIPPort=0x7f02000d;
+    public static final int textViewSensor=0x7f02000e;
+    public static final int textViewSensorValue=0x7f02000f;
+    public static final int textViewServer=0x7f020010;
+    public static final int textViewServerConnect=0x7f020011;
+    public static final int textViewTimerState=0x7f020012;
+    public static final int textViewTimerStateValue=0x7f020013;
   }
   public static final class layout {
     public static final int main=0x7f030000;
