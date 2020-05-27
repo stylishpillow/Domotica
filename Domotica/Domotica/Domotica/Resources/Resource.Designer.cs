@@ -82,40 +82,43 @@ namespace Domotica
 			public const int relativeLayout1 = 2130837510;
 			
 			// aapt resource value: 0x7F020007
-			public const int textViewChangePinState = 2130837511;
+			public const int seekBar1 = 2130837511;
 			
 			// aapt resource value: 0x7F020008
-			public const int textViewChangePinStateValue = 2130837512;
+			public const int textViewChangePinState = 2130837512;
 			
 			// aapt resource value: 0x7F020009
-			public const int textViewDebug = 2130837513;
+			public const int textViewChangePinStateValue = 2130837513;
 			
 			// aapt resource value: 0x7F02000A
-			public const int textViewDebugValue = 2130837514;
+			public const int textViewDebug = 2130837514;
 			
 			// aapt resource value: 0x7F02000B
-			public const int textViewIPAddress = 2130837515;
+			public const int textViewDebugValue = 2130837515;
 			
 			// aapt resource value: 0x7F02000C
-			public const int textViewIPPort = 2130837516;
+			public const int textViewIPAddress = 2130837516;
 			
 			// aapt resource value: 0x7F02000D
-			public const int textViewSensor = 2130837517;
+			public const int textViewIPPort = 2130837517;
 			
 			// aapt resource value: 0x7F02000E
-			public const int textViewSensorValue = 2130837518;
+			public const int textViewSensor = 2130837518;
 			
 			// aapt resource value: 0x7F02000F
-			public const int textViewServer = 2130837519;
+			public const int textViewSensorValue = 2130837519;
 			
 			// aapt resource value: 0x7F020010
-			public const int textViewServerConnect = 2130837520;
+			public const int textViewServer = 2130837520;
 			
 			// aapt resource value: 0x7F020011
-			public const int textViewTimerState = 2130837521;
+			public const int textViewServerConnect = 2130837521;
 			
 			// aapt resource value: 0x7F020012
-			public const int textViewTimerStateValue = 2130837522;
+			public const int textViewTimerState = 2130837522;
+			
+			// aapt resource value: 0x7F020013
+			public const int textViewTimerStateValue = 2130837523;
 			
 			static Id()
 			{

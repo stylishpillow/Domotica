@@ -5,5 +5,8 @@ LinearLayout;obj\Debug\90\res\layout\main.xml
 menu;obj\Debug\90\res\menu\menu.xml
 RelativeLayout;obj\Debug\90\res\layout\main.xml
 resources;obj\Debug\90\res\values\strings.xml
+SeekBar;obj\Debug\90\res\layout\main.xml
+Slider;obj\Debug\90\res\layout\main.xml
+SlidingDrawer;obj\Debug\90\res\layout\main.xml
 string;obj\Debug\90\res\values\strings.xml
 TextView;obj\Debug\90\res\layout\main.xml
