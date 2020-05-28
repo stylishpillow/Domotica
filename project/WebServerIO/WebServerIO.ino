@@ -54,7 +54,7 @@ String httpHeader;           // = String(maxLength);
 int arg = 0, val = 0;        // to store get/post variables from the URL (argument and value, http:\\192.168.1.3\website?p8=1)
 
 void setup() {
-  servo.write(0);
+//  servo.write(0);
    //Init I/O-pins
    DDRD = 0xFC;              // p7..p2: output
    DDRB = 0x3F;              // p14,p15: input, p13..p8: output
@@ -146,16 +146,18 @@ void loop() {
        client.println("</P>");
           
           // output the value of analog input pin A0
-          int sensorValue = analogRead(sensorPin);
-          sensorValue = map(sensorValue, 0, 1023, 0, 180);
+//          int sensorValue = analogRead(sensorPin);
+//          sensorValue = map(sensorValue, 0, 1023, 0, 180);
+          int servoVal = servo.read();
+          
           client.println("<P style='color:DarkBlue'>");      
-          client.print("Analog sensor, channel "); client.print(sensorPin); client.print(": ");
-          if(sensorValue > 600){
+          client.print("Servo position:  ");
+          if(servoVal > 90){
             client.print("<b style='color:red'>");
           } else {
             client.print("<b>");
           }
-           client.print(sensorValue); client.print("</b>");
+           client.print(servoVal); client.print("</b>");
           client.println("</P>");
           
           //grab commands from the url
@@ -204,17 +206,22 @@ void loop() {
 // result: true if arguments are valid
 bool parseHeader(String header, int &a, int &v)
 {
-          char temp[0];
           
-          temp[0] = header.charAt(header.indexOf("?")+2);
-          a = atoi(temp);
+          char pinArr[0];
+          
+          pinArr[0] = header.charAt(header.indexOf("?")+2);
+          a = atoi(pinArr);
           Serial.println(a);
+
+          char valArray[2];
           
-          temp[0] = header.charAt(header.indexOf("=")+1);
-          temp[1] = header.charAt(header.indexOf("=")+2);
-          temp[2] = header.charAt(header.indexOf("=")+3);
-          v = atoi(temp);
+          valArray[0] = header.charAt(header.indexOf("=")+1);
+          valArray[1] = header.charAt(header.indexOf("=")+2);
+          valArray[2] = header.charAt(header.indexOf("=")+3);
+          v = atoi(valArray);
           Serial.println(v);
+
+         
           
           
           if ( (a == 7) && (v >= 0 && v <= 180) )
