@@ -152,12 +152,8 @@ void loop() {
           
           client.println("<P style='color:DarkBlue'>");      
           client.print("Servo position:  ");
-          if(servoVal > 90){
-            client.print("<b style='color:red'>");
-          } else {
-            client.print("<b>");
-          }
-           client.print(servoVal); client.print("</b>");
+            
+          client.print("<b>"); client.print(servoVal); client.print("</b>");
           client.println("</P>");
           
           //grab commands from the url

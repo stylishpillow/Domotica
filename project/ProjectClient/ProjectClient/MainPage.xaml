@@ -7,6 +7,10 @@
              x:Class="ProjectClient.MainPage">
 
     <StackLayout>
+        <Label Text="Pas hier de servo stand aan (0 tot 180)"></Label>
+        
+        <Slider x:Name="servo" Minimum="0" Maximum="180"  />
+        
         <Label x:Name="htmlData" FontSize="12" Margin="8"></Label>
     </StackLayout>
 
