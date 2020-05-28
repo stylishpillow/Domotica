@@ -24,6 +24,8 @@ namespace ProjectClient
             string teststring = test.Substring(test.IndexOf("<b>")+3, 3); // haal de sensor waarde van de analogesensor uit de webpagina ( meer om te testen even nouuu)
             htmlData.Text = teststring; // flikker de waarde naar je tellie 
 
+            servo.Value = Convert.ToInt32(teststring);
+
 
         }
 
@@ -31,7 +33,10 @@ namespace ProjectClient
         {
             int servoVal = Convert.ToInt32(servo.Value);
             //httpreq.setServoValue(Convert.ToInt32(servo.Value));
-            httpreq.GetHtml(servoVal);
+            //httpreq.GetHtml(servoVal);
+            string request = httpreq.GetHtml(servoVal);
+            string sensorValue = request.Substring(request.IndexOf("<b>") + 3, 3);
+            htmlData.Text = sensorValue;
         }
     }
 }

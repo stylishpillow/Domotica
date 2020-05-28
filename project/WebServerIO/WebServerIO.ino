@@ -164,7 +164,7 @@ void loop() {
               servo.write(val);                // Recall: pins 10..13 used for the Ethernet shield
               client.print("Pin ");client.print(arg); client.print(" = "); client.print("<b>");client.println(val);client.print("</b>");
           }
-          else client.println("No IO-pins to control");
+          else {client.print("<b>");client.println(servoVal);client.print("</b>");}
           client.println("</P>");
           
           // end of website
@@ -200,7 +200,6 @@ void loop() {
 // result: true if arguments are valid
 bool parseHeader(String header, int &a, int &v)
 {
-
           char pinArray[0];
           
           pinArray[0] = header.charAt(header.indexOf("?")+2);
@@ -209,7 +208,7 @@ bool parseHeader(String header, int &a, int &v)
           Serial.println(a);
 
           char valArray[2];
-          
+            
           valArray[0] = header.charAt(header.indexOf("=")+1);
           valArray[1] = header.charAt(header.indexOf("=")+2);
           valArray[2] = header.charAt(header.indexOf("=")+3);

@@ -9,12 +9,12 @@ namespace ProjectClient
     class HttpReq
     {
         private int servoValue;
-        public string GetHtml(int servo = 0)
+        public string GetHtml(int servo = -1)
         {
             string uri = "http://192.168.2.17/"; // url van arduino
-            if(servo != 0)
+            if (servo > -1)
             { 
-            uri += "?p7=" + servo; // plak get request achter url
+                uri += "?p7=" + servo; // plak get request achter url
             }
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);    //http request
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();  //http response
