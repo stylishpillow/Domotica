@@ -20,13 +20,11 @@
 // Onderstaande regels worden gebruikt om relatief veel tekst te verwerken. Aangezien de Arduino maar weinig intern geheugen heeft (1 KB)
 // worden deze teksen opgeslagen en verwerkt vanuit het programmageheugen. Je wordt niet geacht dit te begrijpen (maar dat mag wel).
 //----------
-const char cs0[] PROGMEM = "<STRONG>Opdracht 17 van het vak embedded systems 1</STRONG>"; 
-const char cs1[] PROGMEM = "Dit voorbeeld is gebaseerd op het script in Voorbeelden->Ethernet->Webserver";
-const char cs2[] PROGMEM = "De website is dynamische gemaakt door sensorwaarden van kanaal 0 toe te voegen.";
-const char cs3[] PROGMEM = "<B>Breid het programma uit</B> met de mogelijkheid om variabelen mee te geven.";
-const char cs4[] PROGMEM = "Dit kan o.a. door GET-variabelen, via de URL (192.168.1.3/?p8=1).";
-const char cs5[] PROGMEM = "Gebruik de functie <STRONG style='color:Black'>parseHeader(httpHeader, arg, val))</STRONG>";
-const char* const string_table[] PROGMEM = {cs0, cs1, cs2, cs3, cs4, cs5};
+const char cs0[] PROGMEM = "<STRONG>Hier kunt u uw servo aansturen!</STRONG>"; 
+const char cs1[] PROGMEM = "De servo word aangestuurd via de httpHeader maar dit kan ook op de app.";
+const char cs2[] PROGMEM = "De website is dynamische gemaakt door sensorwaarden van een kanaal toe te voegen.";
+const char cs3[] PROGMEM = "Op de website kunt uw <STRONG style='color:Black'>De pin en de Positie </STRONG> zien van de Servo";
+const char* const string_table[] PROGMEM = {cs0, cs1, cs2, cs3};
 char buffer[100];  
 //----------
 
@@ -130,15 +128,15 @@ void loop() {
           client.println("<!DOCTYPE HTML>");
           client.println("<HTML>");
           client.println("<meta http-equiv='refresh' content='3'>");
-          client.println("<HEAD><TITLE>Embedded I/O-Webserver</TITLE><link rel=\"icon\" href=\"data:,\"></HEAD>");
-          client.println("<STYLE> body{width:800px;font-family:verdana;background-color:LightBlue;} ");
+          client.println("<HEAD><TITLE>Project Opdracht A</TITLE><link rel=\"icon\" href=\"data:,\"></HEAD>");
+          client.println("<STYLE> body{width:1000px;text-align:left;margin-right: auto;margin-left: auto;font-family:verdana;background-color:#fff0e6;} ");
           client.println("</STYLE>");
           client.println("<BODY>");
-          client.println("<H4 style='color:DarkBlue'>Embedded I/O-Webserver</H4>"); 
+          client.println("<H4 style='color:DarkBlue'>Project Opdracht A</H4>"); 
 
        // show intro-text, it is OK to remove the following 7 lines
        client.println("<P style='font-size:80%; color:Gray'>");
-       for (int i = 0; i <= 5; i++) 
+       for (int i = 0; i <= 3; i++) 
        {
            strcpy_P(buffer, (char*)pgm_read_word(&(string_table[i])));   // Necessary casts and dereferencing, just copy
            client.println(buffer); client.println("<br>");

@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj": {}
+    "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj": {}
   },
   "projects": {
-    "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj": {
+    "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj",
+        "projectUniqueName": "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj",
         "projectName": "ProjectClient",
-        "projectPath": "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj",
-        "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
-        "outputPath": "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient\\obj\\",
+        "projectPath": "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj",
+        "packagesPath": "C:\\Users\\rienk\\.nuget\\packages\\",
+        "outputPath": "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rienk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
