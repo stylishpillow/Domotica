@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient.iOS\\ProjectClient.iOS.csproj": {}
+    "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient.iOS\\ProjectClient.iOS.csproj": {}
   },
   "projects": {
-    "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient.iOS\\ProjectClient.iOS.csproj": {
+    "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient.iOS\\ProjectClient.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient.iOS\\ProjectClient.iOS.csproj",
+        "projectUniqueName": "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient.iOS\\ProjectClient.iOS.csproj",
         "projectName": "ProjectClient.iOS",
-        "projectPath": "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient.iOS\\ProjectClient.iOS.csproj",
-        "packagesPath": "C:\\Users\\rienk\\.nuget\\packages\\",
-        "outputPath": "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient.iOS\\obj\\",
+        "projectPath": "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient.iOS\\ProjectClient.iOS.csproj",
+        "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
+        "outputPath": "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\rienk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj": {
-                "projectPath": "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj"
+              "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj": {
+                "projectPath": "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj"
               }
             }
           }
@@ -65,21 +65,21 @@
         }
       }
     },
-    "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj": {
+    "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj",
+        "projectUniqueName": "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj",
         "projectName": "ProjectClient",
-        "projectPath": "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj",
-        "packagesPath": "C:\\Users\\rienk\\.nuget\\packages\\",
-        "outputPath": "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\obj\\",
+        "projectPath": "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj",
+        "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
+        "outputPath": "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\rienk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

@@ -206,11 +206,12 @@ void loop() {
 // result: true if arguments are valid
 bool parseHeader(String header, int &a, int &v)
 {
+
+          char pinArray[0];
           
-          char pinArr[0];
-          
-          pinArr[0] = header.charAt(header.indexOf("?")+2);
-          a = atoi(pinArr);
+          pinArray[0] = header.charAt(header.indexOf("?")+2);
+          a = atoi(pinArray);
+
           Serial.println(a);
 
           char valArray[2];
