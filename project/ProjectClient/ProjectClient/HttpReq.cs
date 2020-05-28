@@ -10,7 +10,7 @@ namespace ProjectClient
     {
         public string GetHtml(string servo = "")
         {
-            string uri = "http://192.168.2.17/"; // url van arduino
+            string uri = "http://192.168.1.12/"; // url van arduino
             string get = servo; //waarde voor get request
             uri += servo; // plak get request achter url
 

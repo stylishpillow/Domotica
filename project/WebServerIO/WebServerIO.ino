@@ -1,3 +1,5 @@
+#include <Servo.h>
+
 /*
  Web Server
  A simple web server that shows the value of the analog input pins.
@@ -34,6 +36,8 @@ char buffer[100];
 #define ledPin        8
 #define infoPin       9  
 
+Servo servo;  // create a servo object
+
 //Includes
 #include <SPI.h>
 #include <Ethernet.h>
@@ -41,7 +45,7 @@ char buffer[100];
 // Enter a MAC address and IP address for your controller below. The IP address will be dependent on your local network:
 //byte mac[] = { 0x40, 0x6C, 0x8F, 0x36, 0x84, 0x8A }; 
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };   // Ethernet adapter shield S. Oosterhaven
-IPAddress ip(192, 168, 1, 108);
+IPAddress ip(192, 168, 1, 9);
 
 // Initialize the Ethernet server library (port 80 is default for HTTP):
 EthernetServer server(80);
@@ -50,7 +54,7 @@ String httpHeader;           // = String(maxLength);
 int arg = 0, val = 0;        // to store get/post variables from the URL (argument and value, http:\\192.168.1.3\website?p8=1)
 
 void setup() {
-  
+  servo.write(0);
    //Init I/O-pins
    DDRD = 0xFC;              // p7..p2: output
    DDRB = 0x3F;              // p14,p15: input, p13..p8: output
@@ -143,6 +147,7 @@ void loop() {
           
           // output the value of analog input pin A0
           int sensorValue = analogRead(sensorPin);
+          sensorValue = map(sensorValue, 0, 1023, 0, 180);
           client.println("<P style='color:DarkBlue'>");      
           client.print("Analog sensor, channel "); client.print(sensorPin); client.print(": ");
           if(sensorValue > 600){
@@ -159,7 +164,8 @@ void loop() {
           
           if (parseHeader(httpHeader, arg, val)) {   // search for argument and value, eg. p8=1
               //Serial.print(arg); Serial.print(" "); Serial.println(val);  // for debug only
-              digitalWrite(arg, val);                // Recall: pins 10..13 used for the Ethernet shield
+              servo.attach(arg); // attaches the servo on pin 9 to the servo object
+              servo.write(val);                // Recall: pins 10..13 used for the Ethernet shield
               client.print("Pin ");client.print(arg); client.print(" = "); client.println(val);
           }
           else client.println("No IO-pins to control");
@@ -202,11 +208,16 @@ bool parseHeader(String header, int &a, int &v)
           
           temp[0] = header.charAt(header.indexOf("?")+2);
           a = atoi(temp);
-
-          temp[0] = header.charAt(header.indexOf("=")+1);
-          v = atoi(temp);
+          Serial.println(a);
           
-          if ( (a >= 2 && a <= 9) && (v == 1 || v == 0) )
+          temp[0] = header.charAt(header.indexOf("=")+1);
+          temp[1] = header.charAt(header.indexOf("=")+2);
+          temp[2] = header.charAt(header.indexOf("=")+3);
+          v = atoi(temp);
+          Serial.println(v);
+          
+          
+          if ( (a == 7) && (v >= 0 && v <= 180) )
           {
             return true;
           } else {

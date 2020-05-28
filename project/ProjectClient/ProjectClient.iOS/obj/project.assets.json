@@ -1018,24 +1018,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gebruiker\\.nuget\\packages\\": {},
+    "C:\\Users\\rienk\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\NHL\\domproject\\ProjectClient\\ProjectClient.iOS\\ProjectClient.iOS.csproj",
+      "projectUniqueName": "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient.iOS\\ProjectClient.iOS.csproj",
       "projectName": "ProjectClient.iOS",
-      "projectPath": "D:\\NHL\\domproject\\ProjectClient\\ProjectClient.iOS\\ProjectClient.iOS.csproj",
-      "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
-      "outputPath": "D:\\NHL\\domproject\\ProjectClient\\ProjectClient.iOS\\obj\\",
+      "projectPath": "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient.iOS\\ProjectClient.iOS.csproj",
+      "packagesPath": "C:\\Users\\rienk\\.nuget\\packages\\",
+      "outputPath": "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rienk\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1049,8 +1049,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\NHL\\domproject\\ProjectClient\\ProjectClient\\ProjectClient.csproj": {
-              "projectPath": "D:\\NHL\\domproject\\ProjectClient\\ProjectClient\\ProjectClient.csproj"
+            "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj": {
+              "projectPath": "D:\\rienk\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj"
             }
           }
         }
