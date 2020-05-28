@@ -23,6 +23,15 @@ namespace ProjectClient
             string test = httpreq.GetHtml(); // roep de functie aan om de htmlpagina op te halen
             string teststring = test.Substring(test.IndexOf("<b>")+3, 3); // haal de sensor waarde van de analogesensor uit de webpagina ( meer om te testen even nouuu)
             htmlData.Text = teststring; // flikker de waarde naar je tellie 
+
+
+        }
+
+        private void sendValue_Clicked(object sender, EventArgs e)
+        {
+            int servoVal = Convert.ToInt32(servo.Value);
+            //httpreq.setServoValue(Convert.ToInt32(servo.Value));
+            httpreq.GetHtml(servoVal);
         }
     }
 }

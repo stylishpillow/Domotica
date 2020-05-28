@@ -8,12 +8,14 @@ namespace ProjectClient
 {
     class HttpReq
     {
-        public string GetHtml(string servo = "")
+        private int servoValue;
+        public string GetHtml(int servo = 0)
         {
-            string uri = "http://192.168.1.12/"; // url van arduino
-            string get = servo; //waarde voor get request
-            uri += servo; // plak get request achter url
-
+            string uri = "http://192.168.2.17/"; // url van arduino
+            if(servo != 0)
+            { 
+            uri += "?p7=" + servo; // plak get request achter url
+            }
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);    //http request
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();  //http response
             StreamReader sr = new StreamReader(response.GetResponseStream());   //geen idee maar moeten we gebruiken 
@@ -21,6 +23,16 @@ namespace ProjectClient
             string html = sr.ReadToEnd();   //lees de webpagina
             sr.Close(); // sluit connectie
             return html; //geef de gehele html pagina terug
+        }
+
+        public void setServoValue(int value)
+        {
+            servoValue = value;
+        }
+
+        public int getServoValue()
+        {
+            return servoValue;
         }
     }
 }

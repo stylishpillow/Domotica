@@ -6,10 +6,12 @@
              mc:Ignorable="d"
              x:Class="ProjectClient.MainPage">
 
-    <StackLayout>
-        <Label Text="Pas hier de servo stand aan (0 tot 180)"></Label>
-        
-        <Slider x:Name="servo" Minimum="0" Maximum="180"  />
+    <StackLayout Margin="30">
+        <Label FontSize="Body" Text="Pas hier de servo stand aan (0 tot 180)"></Label>
+
+        <Slider x:Name="servo" MaximumTrackColor="Black" ThumbColor="SeaGreen"  MinimumTrackColor="Khaki"  Minimum="0" Maximum="180"/>
+
+        <Button x:Name="sendValue" Text="stel Het vlaggeschip onder de neukmachines in" Clicked="sendValue_Clicked"></Button>
         
         <Label x:Name="htmlData" FontSize="12" Margin="8"></Label>
     </StackLayout>
