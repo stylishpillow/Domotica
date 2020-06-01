@@ -568,25 +568,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gebruiker\\.nuget\\packages\\": {},
+    "C:\\Users\\eelco\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj",
+      "projectUniqueName": "C:\\Users\\eelco\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj",
       "projectName": "ProjectClient",
-      "projectPath": "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj",
-      "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
-      "outputPath": "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient\\obj\\",
+      "projectPath": "C:\\Users\\eelco\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj",
+      "packagesPath": "C:\\Users\\eelco\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\eelco\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\eelco\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

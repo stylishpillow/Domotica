@@ -11,7 +11,7 @@ namespace ProjectClient
         private int servoValue;
         public string GetHtml(int servo = -1)
         {
-            string uri = "http://192.168.2.17/"; // url van arduino
+            string uri = "http://192.168.178.220/"; // url van arduino
             if (servo > -1)
             { 
                 uri += "?p7=" + servo; // plak get request achter url

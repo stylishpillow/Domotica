@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UIvKh08RZ3ukmw4sTxymEAgDaqaDPj+W4PkyutnM3PTRnBRPaEmwXjK/mgJlmAn0AyzfanM2OyUnLWQuGmST2Q==",
+  "dgSpecHash": "WEQRtLzF5W3DmbaOaPMDC9J1Ees1p4MOtjaQGRnvdyFcJaHhOX/ntuH4hdoOXSQokD3Q36TjE2c/f/qlwWF+JA==",
   "success": true,
-  "projectFilePath": "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient.iOS\\ProjectClient.iOS.csproj",
+  "projectFilePath": "C:\\Users\\eelco\\Documents\\GitHub\\Domotica\\project\\ProjectClient\\ProjectClient.iOS\\ProjectClient.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Gebruiker\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\eelco\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.4.0.991265\\xamarin.forms.4.4.0.991265.nupkg.sha512"
   ],
