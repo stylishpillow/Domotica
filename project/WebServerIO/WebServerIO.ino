@@ -150,15 +150,15 @@ void loop() {
           
           client.println("<P style='color:DarkBlue'>");      
           client.print("Servo position:  ");
-            
-//          client.print("<b>"); client.print(servoVal); client.print("</b>");
+          client.print(servoVal);  
+//          client.print("<b>");  client.print("</b>");
           client.println("</P>");
           
           //grab commands from the url
           client.println("<P>");
 
-          
-          if (parseHeader(httpHeader, arg, val)) {   // search for argument and value, eg. p8=1
+        
+           if (parseHeader(httpHeader, arg, val)) {   // search for argument and value, eg. p8=1
               //Serial.print(arg); Serial.print(" "); Serial.println(val);  // for debug only
               servo.attach(arg); // attaches the servo on pin 9 to the servo object
               servo.write(val);                // Recall: pins 10..13 used for the Ethernet shield
