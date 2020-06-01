@@ -25,6 +25,7 @@ namespace ProjectClient
 
             sensorValue.Text = httpreq.GetSensorValue();
 
+
         }
         /// <summary>
         /// if button is clicked get the value from the slider and set the servo value 
@@ -39,6 +40,7 @@ namespace ProjectClient
             httpreq.SetServoValue(servoVal);
 
             servoValue.Text = httpreq.GetServoValue();
+
         }
 
         /// <summary>
