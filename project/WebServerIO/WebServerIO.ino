@@ -150,7 +150,7 @@ void loop() {
           
           client.println("<P style='color:DarkBlue'>");      
           client.print("Servo position:  ");
-          client.print(servoVal);  
+//          client.print(servoVal);  
 //          client.print("<b>");  client.print("</b>");
           client.println("</P>");
           
