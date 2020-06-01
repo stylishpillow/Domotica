@@ -26,6 +26,11 @@ namespace ProjectClient
 
             servo.Value = Convert.ToInt32(teststring);
 
+            string sensorValue = test.Substring(test.IndexOf("<i>")+3, 3);
+            htmlData2.Text = sensorValue;
+
+            //htmlData.Text = test;
+
 
         }
 
@@ -37,6 +42,13 @@ namespace ProjectClient
             string request = httpreq.GetHtml(servoVal);
             string sensorValue = request.Substring(request.IndexOf("<b>") + 3, 3);
             htmlData.Text = sensorValue;
+        }
+
+        private void getValue_Clicked(object sender, EventArgs e)
+        {
+            string test = httpreq.GetHtml();
+            string sensorValue = test.Substring(test.IndexOf("<i>") + 3, 3);
+            htmlData2.Text = sensorValue;
         }
     }
 }

@@ -14,6 +14,11 @@
         <Button x:Name="sendValue" Text="stel servo in" Clicked="sendValue_Clicked"></Button>
         
         <Label x:Name="htmlData" FontSize="12" Margin="8"></Label>
+
+        <Label FontSize="Body" Text="De waarde van de sensor: "></Label>
+        
+        <Label x:Name="htmlData2" FontSize="12" Margin="8"></Label>
+        <Button x:Name="getValue" Text="Sensor waarde opnieuw laden" Clicked="getValue_Clicked"></Button>
     </StackLayout>
 
 </ContentPage>

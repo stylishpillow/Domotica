@@ -144,8 +144,12 @@ void loop() {
        client.println("</P>");
           
           // output the value of analog input pin A0
-//          int sensorValue = analogRead(sensorPin);
-//          sensorValue = map(sensorValue, 0, 1023, 0, 180);
+          int sensorValue = analogRead(sensorPin);
+          sensorValue = map(sensorValue, 0, 1023, 0, 100);
+          client.println("Sensor value: ");
+          client.print("<i>");
+          client.println(sensorValue);//waarde van de sensor.
+          client.print("</i>");
           int servoVal = servo.read();
           
           client.println("<P style='color:DarkBlue'>");      
@@ -164,7 +168,11 @@ void loop() {
               servo.write(val);                // Recall: pins 10..13 used for the Ethernet shield
               client.print("Pin ");client.print(arg); client.print(" = "); client.print("<b>");client.println(val);client.print("</b>");
           }
-          else {client.print("<b>");client.println(servoVal);client.print("</b>");}
+          else {
+            client.print("<b>");
+            client.println(servoVal);
+            client.print("</b>");
+            }
           client.println("</P>");
           
           // end of website

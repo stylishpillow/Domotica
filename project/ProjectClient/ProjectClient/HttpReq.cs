@@ -9,9 +9,10 @@ namespace ProjectClient
     class HttpReq
     {
         private int servoValue;
+        private int sensorValue;
         public string GetHtml(int servo = -1)
         {
-            string uri = "http://192.168.178.220/"; // url van arduino
+            string uri = "http://192.168.1.107/"; // url van arduino
             if (servo > -1)
             { 
                 uri += "?p7=" + servo; // plak get request achter url
@@ -23,6 +24,16 @@ namespace ProjectClient
             string html = sr.ReadToEnd();   //lees de webpagina
             sr.Close(); // sluit connectie
             return html; //geef de gehele html pagina terug
+        }
+        
+        public void setSensorValue(int value)
+        {
+            sensorValue = value;
+        }
+
+        public int getSensorValue()
+        {
+            return sensorValue;
         }
 
         public void setServoValue(int value)
