@@ -6,6 +6,7 @@ project/.vs
 [Dd]ebugPublic/
 bin/
 v16/
+project/ProjectClient/ProjectClient/obj
 
 # User-specific files
 *.rsuser
