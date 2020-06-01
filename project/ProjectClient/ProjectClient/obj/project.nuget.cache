@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "9T8AbiNd9Q4rN5cDiMtcQwCPbkskQ8ontq0889UnglLVTDA21CN6r3jKdgOD3X/kNJbV+F7ynYgwdV3Mle6pgw==",
+  "dgSpecHash": "mlG1gaaJx8AH1I3sTEsG9/PEDIWsw9E9j7dH/zdCBsPEyKRfUjjRylJaTGXS+ELq2UTEhOa+F/l1ndy9k8cbtw==",
   "success": true,
-  "projectFilePath": "D:\\Documenten\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj",
+  "projectFilePath": "D:\\NHL\\domproject\\Domotica\\project\\ProjectClient\\ProjectClient\\ProjectClient.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\kevin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\kevin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\kevin\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Gebruiker\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.4.0.991265\\xamarin.forms.4.4.0.991265.nupkg.sha512"
   ],
