@@ -16,6 +16,9 @@
         <Label x:Name="servoValue" FontSize="12" Margin="8"></Label>
 
         <Label FontSize="Body" Text="De waarde van de sensor: "></Label>
+        
+        <Label x:Name="sensorValue" FontSize="12" Margin="8"></Label>
+        <Button x:Name="getValue" Text="Sensorwaarde opvragen" Clicked="getValue_Clicked"></Button>
 
     </StackLayout>
 
