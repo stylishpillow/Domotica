@@ -26,19 +26,14 @@ namespace ProjectClient
 
             servo.Value = Convert.ToInt32(teststring);
 
-            string sensorValue = test.Substring(test.IndexOf("<i>")+3, 3);
-            htmlData2.Text = sensorValue;
-
-            //htmlData.Text = test;
-
+            string sensorValue = test.Substring(test.IndexOf("<i>")+3, 3);// haalt de sensor waarde op uit de webpagina
+            htmlData2.Text = sensorValue;// zet de waarde in de app
 
         }
 
         private void sendValue_Clicked(object sender, EventArgs e)
         {
             int servoVal = Convert.ToInt32(servo.Value);
-            //httpreq.setServoValue(Convert.ToInt32(servo.Value));
-            //httpreq.GetHtml(servoVal);
             string request = httpreq.GetHtml(servoVal);
             string sensorValue = request.Substring(request.IndexOf("<b>") + 3, 3);
             htmlData.Text = sensorValue;
