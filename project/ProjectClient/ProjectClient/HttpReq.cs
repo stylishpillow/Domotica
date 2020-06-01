@@ -25,25 +25,5 @@ namespace ProjectClient
             sr.Close(); // sluit connectie
             return html; //geef de gehele html pagina terug
         }
-        
-        public void setSensorValue(int value)
-        {
-            sensorValue = value;
-        }
-
-        public int getSensorValue()
-        {
-            return sensorValue;
-        }
-
-        public void setServoValue(int value)
-        {
-            servoValue = value;
-        }
-
-        public int getServoValue()
-        {
-            return servoValue;
-        }
     }
 }
