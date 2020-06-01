@@ -8,8 +8,6 @@ namespace ProjectClient
 {
     class HttpReq
     {
-        private int servoValue;
-        private int sensorValue;
         public string GetHtml(int servo = -1)
         {
             string uri = "http://192.168.1.107/"; // url van arduino
