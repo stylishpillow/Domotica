@@ -17,7 +17,7 @@ namespace ProjectClient
         /// <param name="servo"></param>
         private void ConnectToWebsite(int servo = -1)
         {
-            string url = "http://192.168.2.17/"; // url van arduino
+            string url = "http://192.168.2.15/"; // url van arduino
             if (servo > -1)
             {
                 url += "?p7=" + servo; // plak get request achter url

@@ -89,14 +89,6 @@ void setup() {
 void loop() {
   // listen for incoming clients 
   EthernetClient client = server.available(); 
-
-//   digitalWrite(ledPin, HIGH);
-//   delay(1000);
-//   digitalWrite(ledPin, LOW);
-//   delay(1000);
-//   digitalWrite(infoPin, HIGH);
-//   delay(1000);
-//   digitalWrite(infoPin, LOW);
   
   //Webpage part
   if (client) {
@@ -146,10 +138,12 @@ void loop() {
           // output the value of analog input pin A0
           int sensorValue = analogRead(sensorPin);
           sensorValue = map(sensorValue, 0, 1023, 0, 100);
+          
           client.println("Sensor value: ");
           client.print("<i>");
           client.println(sensorValue);//waarde van de sensor.
           client.print("</i>");
+          
           int servoVal = servo.read();
           
           client.println("<P style='color:DarkBlue'>");      
@@ -223,8 +217,6 @@ bool parseHeader(String header, int &a, int &v)
           v = atoi(valArray);
           Serial.println(v);
 
-         
-          
           
           if ( (a == 7) && (v >= 0 && v <= 180) )
           {
