@@ -32,30 +32,34 @@ void distances () {
 
   Serial.print("Afstand: ");
   Serial.println(distance);
-}
 
-void openclose ()
-{
   if (distance <= 100)
-  { 
+   { 
     while (pos < 180){
-      for (pos = 0; pos < 180; pos++){
-      //Serial.println(pos);
-      servo.write(pos);
-      delay (10);
+      openBin();
       }
+    }
+   else if (pos == 180){
+    closeBin();
    }
 }
-  else if (pos == 180) {
-  delay (5000);  
+
+void openBin (){
+  for (pos = 0; pos < 180; pos++){
+      //Serial.println(pos);
+      servo.write(pos);
+      delay(10);
+ }
+}
+
+void closeBin (){
+    delay (5000);  
   for (pos = 180; pos > 0; pos--){
      //Serial.println(pos);
     servo.write(pos);
     delay(10);
-  }
  }
 }
-
 
 void setup() {
   Serial.begin(115200);
@@ -75,7 +79,7 @@ connected= true;
 
 void loop() {
   distances();
-  openclose();
+  //openclose();
 
 if(!connected) return;
 EthernetClient ethernetClient = server.available();
