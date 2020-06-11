@@ -6,8 +6,6 @@ byte mac[] = { 0x40, 0x6c, 0x8f, 0x36, 0x84, 0x8a };
 EthernetServer server(80);
 bool connected = false;
 
-
-
 const int trigPin = 12;
 const int echoPin = 8;
 
@@ -33,58 +31,62 @@ void distances () {
 
   Serial.print("Afstand: ");
   Serial.println(distance);
-}
-
-
-//open bin
-void openclose ()
-{
+  
   if (distance <= 100)
-  { 
+   { 
     while (pos < 180){
-      for (pos = 0; pos < 180; pos++){
-      //Serial.println(pos);
-      servo.write(pos);
-      delay (10);
+      openBin();
       }
+    }
+   else if (pos == 180){
+    closeBin();
    }
 }
-  else if (pos == 180) {
-  delay (5000);  
+
+void openBin (){
+  for (pos = 0; pos < 180; pos++){
+      //Serial.println(pos);
+      servo.write(pos);
+      delay(10);
+ }
+}
+
+void closeBin (){
+    delay (5000);  
   for (pos = 180; pos > 0; pos--){
      //Serial.println(pos);
     servo.write(pos);
     delay(10);
-  }
  }
 }
 
 void runServer()
 {
   if(!connected) return;
-EthernetClient ethernetClient = server.available();
-if(!ethernetClient) return;
-
-while(ethernetClient.connected())
-{
-  char buffer[128];
-  int count = 0;
-  while(ethernetClient.available())
+  
+  EthernetClient ethernetClient = server.available();
+  if(!ethernetClient) return;
+  
+  while(ethernetClient.connected())
   {
-    buffer[count++] = ethernetClient.read();
-  }
-  buffer[count] = '\0';
-  if(count > 0)
-  {
-    Serial.println(buffer);
-    if(String(buffer) == String("force"))
+    char buffer[128];
+    int count = 0;
+    while(ethernetClient.available())
     {
-      ethernetClient.print("gelukt");
-    } else {
-      ethernetClient.print(buffer);
+      buffer[count++] = ethernetClient.read();
+    }
+    buffer[count] = '\0';
+    if(count > 0)
+    {
+      Serial.println(buffer);
+      if(String(buffer) == String("force"))
+      {
+        ethernetClient.print("gelukt");
+      } else {
+        ethernetClient.print(buffer);
+      }
     }
   }
-}
 }
 
 void setup() {
@@ -105,10 +107,7 @@ connected= true;
 
 void loop() {
   distances();
-  openclose();
+//  openclose();
   runServer
-
-
-  
 }
     
