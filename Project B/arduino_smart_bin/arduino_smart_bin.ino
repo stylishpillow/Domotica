@@ -19,6 +19,7 @@ Servo servo;  // create a servo object
 
 int pos = 0;
 
+//check distance from bin
 void distances () {
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
@@ -34,6 +35,8 @@ void distances () {
   Serial.println(distance);
 }
 
+
+//open bin
 void openclose ()
 {
   if (distance <= 100)
@@ -56,28 +59,9 @@ void openclose ()
  }
 }
 
-
-void setup() {
-  Serial.begin(115200);
-
-if(Ethernet.begin(mac) == 0) return;
-Serial.print("Listening on address: ");
-Serial.println(Ethernet.localIP());
-server.begin();
-connected= true;
-
-  
-  pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);
-  servo.attach(7); 
-  servo.write(0);
-}
-
-void loop() {
-  distances();
-  openclose();
-
-if(!connected) return;
+void runServer()
+{
+  if(!connected) return;
 EthernetClient ethernetClient = server.available();
 if(!ethernetClient) return;
 
@@ -101,6 +85,29 @@ while(ethernetClient.connected())
     }
   }
 }
+}
+
+void setup() {
+  Serial.begin(115200);
+
+if(Ethernet.begin(mac) == 0) return;
+Serial.print("Listening on address: ");
+Serial.println(Ethernet.localIP());
+server.begin();
+connected= true;
+
+  
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  servo.attach(7); 
+  servo.write(0);
+}
+
+void loop() {
+  distances();
+  openclose();
+  runServer
+
 
   
 }
