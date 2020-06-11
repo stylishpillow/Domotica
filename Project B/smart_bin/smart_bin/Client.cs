@@ -8,6 +8,12 @@ namespace smart_bin
 {
     class Client
     {
+        /// <summary>
+        /// Open connection with arduino
+        /// </summary>
+        /// <param name="ipaddress">Server ipaddres</param>
+        /// <param name="portnr">Server portnr</param>
+        /// <returns>Socket connection</returns>
         public Socket open(string ipaddress, int portnr)
         {
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -17,10 +23,21 @@ namespace smart_bin
             return socket;
         }
 
+        /// <summary>
+        ///  Send text to arduino
+        /// </summary>
+        /// <param name="socket"></param>
+        /// <param name="text"></param>
         public void write(Socket socket, string text)
         {
             socket.Send(Encoding.ASCII.GetBytes(text));
         }
+
+        /// <summary>
+        /// Get response from server (receive message)
+        /// </summary>
+        /// <param name="socket"></param>
+        /// <returns>response from arduino</returns>
         public string read(Socket socket)
         {
             byte[] bytes = new byte[4096];
@@ -29,11 +46,23 @@ namespace smart_bin
             return text;
         }
 
+        /// <summary>
+        /// close connection
+        /// </summary>
+        /// <param name="socket"></param>
         public void close(Socket socket)
         {
             socket.Close();
         }
 
+        /// <summary>
+        /// open connection, write message, receive response and close connection
+        /// ask response from server
+        /// </summary>
+        /// <param name="ipaddres">arduino(server) ipaddress</param>
+        /// <param name="portnr">portnr (arduino has port nr 80)</param>
+        /// <param name="message">message to arduino</param>
+        /// <returns>message from arduino</returns>
         public string ask(string ipaddres, int portnr, string message)
         {
             Socket s = open(ipaddres, portnr);
