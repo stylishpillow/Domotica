@@ -45,7 +45,7 @@ void distances () {
 
 void openBin (){
   for (pos = 0; pos < 180; pos++){
-      //Serial.println(pos);
+//      Serial.println(pos);
       servo.write(pos);
       delay(10);
  }
@@ -54,7 +54,7 @@ void openBin (){
 void closeBin (){
     delay (5000);  
   for (pos = 180; pos > 0; pos--){
-     //Serial.println(pos);
+//     Serial.println(pos);
     servo.write(pos);
     delay(10);
  }
@@ -108,6 +108,6 @@ connected= true;
 void loop() {
   distances();
 //  openclose();
-  runServer
+  runServer();
 }
     
