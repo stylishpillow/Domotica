@@ -39,7 +39,7 @@ void distances () {
       openBin();
       }
     }
-   else if (pos == 180 && distance < 1000){
+   else if (pos == 180 && (distance > 50 && distance < 1000)){
     closeBin();
    }
 }
