@@ -6,13 +6,27 @@
              mc:Ignorable="d"
              x:Class="smart_bin.MainPage">
 
-    <StackLayout>
+    <StackLayout Padding="40" BackgroundColor="CornflowerBlue">
+
+        <Label Text="Smart Prullenbak" HorizontalTextAlignment="Center" FontSize="30" TextColor="Black"></Label>
+
+        
+        <Label VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Status: " FontSize="Medium" FontAttributes="Bold"/>
+                    <Span x:Name="status" Text="Open" TextColor="LimeGreen" FontSize="Medium" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Button x:Name="OpenBtn" Text="Open" BackgroundColor="Green" TextColor="White" FontSize="20" FontAttributes="Bold" CornerRadius="10" Padding="20"></Button>
+        
         <!-- Place new controls here -->
-        <Label x:Name="testLabel" Text="" 
+        <!--<Label x:Name="testLabel" Text="" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
 
-        <Button x:Name="testbtn" Text="Klik" Clicked="testbtn_Clicked"></Button>
+        <Button x:Name="testbtn" Text="Klik" Clicked="testbtn_Clicked"></Button>-->
     </StackLayout>
 
 </ContentPage>
