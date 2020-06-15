@@ -17,7 +17,7 @@ Servo servo;  // create a servo object
 
 int pos = 0;
 
-bool accuraat = true;
+//bool accuraat = true;
 
 //check distance from bin
 void distances () {
@@ -33,7 +33,7 @@ void distances () {
 
   Serial.print("Afstand: ");
   Serial.println(distance);
-  if (distance <= 20)
+  if (distance > 0 && distance <= 20)
    { 
     while (pos < 180){
       openBin();
@@ -46,7 +46,6 @@ void distances () {
 
 void openBin (){
   for (pos = 0; pos < 180; pos++){
-//      Serial.println(pos);
       servo.write(pos);
       delay(10);
  }
@@ -55,7 +54,6 @@ void openBin (){
 void closeBin (){
     delay (5000);  
   for (pos = 180; pos > 0; pos--){
-//     Serial.println(pos);
     servo.write(pos);
     delay(10);
  }
@@ -80,11 +78,18 @@ void runServer()
     if(count > 0)
     {
       Serial.println(buffer);
-      if(String(buffer) == String("force"))
+      if(String(buffer) == String("open"))
       {
-        ethernetClient.print("gelukt");
-      } else {
-        ethernetClient.print(buffer);
+        while (pos < 180){
+         openBin();
+        }
+        ethernetClient.print("Open");
+        while (pos > 0){
+          closeBin();
+        }
+        ethernetClient.print("Close");
+      //else if (String(buffer) == String("test")) {
+        //ethernetClient.print("Close");
       }
     }
   }
@@ -107,8 +112,8 @@ connected= true;
 }
 
 void loop() {
-  distances();
 //  openclose();
   runServer();
+  distances();
 }
     

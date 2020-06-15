@@ -18,15 +18,14 @@ namespace smart_bin
         public MainPage()
         {
             InitializeComponent();
-
         }
 
         private void OpenBin(object sender, EventArgs e)
         {
             // 1e parameter is het ipaddress van de arduino 2e is poort 80 als het goed is heeft arduino dat ook en 3e is het bericht wat je verstuurd
             //als je force stuurt krijg je "gelukt" terug en anders verstuurd hij het verstuurde bericht terug 
-            status.Text = client.ask("192.168.1.20", 80, "test");
-
+            string ip = ipaddress.Text;
+            status.Text = client.ask(ip, 80, "open");
         }
     }
 }
