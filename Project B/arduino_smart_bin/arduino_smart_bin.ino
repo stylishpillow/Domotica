@@ -17,6 +17,8 @@ Servo servo;  // create a servo object
 
 int pos = 0;
 
+bool accuraat = true;
+
 //check distance from bin
 void distances () {
   digitalWrite(trigPin, LOW);
@@ -31,14 +33,13 @@ void distances () {
 
   Serial.print("Afstand: ");
   Serial.println(distance);
-  
-  if (distance <= 100)
+  if (distance <= 20)
    { 
     while (pos < 180){
       openBin();
       }
     }
-   else if (pos == 180){
+   else if (pos == 180 && distance < 1000){
     closeBin();
    }
 }
