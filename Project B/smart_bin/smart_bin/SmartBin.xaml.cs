@@ -53,14 +53,16 @@ namespace smart_bin
                 status.Text = binStatus;
                 if (binStatus == "Geopend")
                 {
+                    OpenBtn.IsEnabled = false;
                     status.TextColor = Color.LimeGreen;
                 }
                 else if (binStatus == "Gesloten")
                 {
+                    OpenBtn.IsEnabled = true;
                     status.TextColor = Color.Red;
                 }
 
-                await Task.Delay(5000);
+                await Task.Delay(1000);
                 //status.Text = client.ask(ipaddress, 80, "status");
             }
         }
