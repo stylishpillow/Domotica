@@ -18,8 +18,15 @@ namespace smart_bin
         {
             InitializeComponent();
             this.ipaddress = ip;
-
+            string binStatus = client.ask(ipaddress, 80, "status");
             status.Text = client.ask(ipaddress, 80, "status");
+            if (binStatus == "Geopend")
+            {
+                status.TextColor = Color.LimeGreen;
+            } else if(binStatus == "Gesloten")
+            {
+                status.TextColor = Color.Red;
+            }
         }
 
         private async void OpenBin(object sender, EventArgs e)

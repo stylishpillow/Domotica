@@ -118,7 +118,6 @@ void setup() {
   server.begin();
   connected = true;
 
-
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
   servo.attach(7);
