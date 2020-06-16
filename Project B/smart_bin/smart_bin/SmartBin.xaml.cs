@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -17,16 +18,8 @@ namespace smart_bin
         public SmartBin(string ip)
         {
             InitializeComponent();
-            this.ipaddress = ip;
-            string binStatus = client.ask(ipaddress, 80, "status");
-            status.Text = client.ask(ipaddress, 80, "status");
-            if (binStatus == "Geopend")
-            {
-                status.TextColor = Color.LimeGreen;
-            } else if(binStatus == "Gesloten")
-            {
-                status.TextColor = Color.Red;
-            }
+            this.ipaddress = ip;           
+            ReadStatus(ip);
         }
 
         private async void OpenBin(object sender, EventArgs e)
@@ -49,6 +42,27 @@ namespace smart_bin
             status.Text = client.ask(ipaddress, 80, "close");
             status.TextColor = Color.Red;
             OpenBtn.IsEnabled = true;
+        }
+
+
+        private async void ReadStatus(string ip)
+        {
+            while (true)
+            {
+                string binStatus = client.ask(ip, 80, "status");
+                status.Text = binStatus;
+                if (binStatus == "Geopend")
+                {
+                    status.TextColor = Color.LimeGreen;
+                }
+                else if (binStatus == "Gesloten")
+                {
+                    status.TextColor = Color.Red;
+                }
+
+                await Task.Delay(5000);
+                //status.Text = client.ask(ipaddress, 80, "status");
+            }
         }
     }
 }

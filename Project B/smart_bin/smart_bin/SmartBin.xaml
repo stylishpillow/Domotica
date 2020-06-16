@@ -18,5 +18,6 @@
             </Label.FormattedText>
         </Label>
         <Button x:Name="OpenBtn" Clicked="OpenBin" Text="Open" BackgroundColor="Green" TextColor="White" FontSize="20" FontAttributes="Bold" CornerRadius="10" Padding="20"></Button>
+        <!--<Button x:Name="Satus" Clicked="ReadStatus" Text="Read Status" BackgroundColor="Wheat" TextColor="White" FontSize="20" FontAttributes="Bold" CornerRadius="10" Padding="20"></Button>-->
     </StackLayout>
 </ContentPage>
