@@ -18,23 +18,30 @@ namespace smart_bin
         {
             InitializeComponent();
             this.ipaddress = ip;
+
+            status.Text = client.ask(ipaddress, 80, "status");
         }
 
-        private void OpenBin(object sender, EventArgs e)
+        private async void OpenBin(object sender, EventArgs e)
         {
             // 1e parameter is het ipaddress van de arduino 2e is poort 80 als het goed is heeft arduino dat ook en 3e is het bericht wat je verstuurd
             //als je force stuurt krijg je "gelukt" terug en anders verstuurd hij het verstuurde bericht terug 
-            string ip = ipaddress.Text;
+            OpenBtn.IsEnabled = false;
+            string open = client.ask(ipaddress, 80, "open");
 
-            if (client.ask(ip, 80, "open") == "Error")
+            if (open == "Error")
             {
                 status.TextColor = Color.Red;
-                ipaddress.TextColor = Color.Red; 
+                status.Text = "Er is iets mis gegaan";
             } else
             {
-                status.Text = client.ask(ip, 80, "open");
-                ipaddress.IsEnabled = false;
+                status.Text = open;
+                status.TextColor = Color.LimeGreen;
             }
+            await Task.Delay(5000);
+            status.Text = client.ask(ipaddress, 80, "close");
+            status.TextColor = Color.Red;
+            OpenBtn.IsEnabled = true;
         }
     }
 }

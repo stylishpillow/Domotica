@@ -31,8 +31,8 @@ void distances () {
   duration = pulseIn(echoPin, HIGH);
   distance = (duration * 0.0343) / 2;
  
-  Serial.print("Afstand: ");
-  Serial.println(distance);
+//  Serial.print("Afstand: ");
+//  Serial.println(distance);
   if (distance > 0 && distance <= 20)
   {
     while (pos < 180) {
@@ -40,23 +40,29 @@ void distances () {
     }
   }
   else if (pos == 180 && (distance > 50 && distance < 1000)) {
+    delay (5000);
     closeBin();
   }
-}
+} 
+
+
+String Status = "Gesloten";
+
 
 void openBin () {
   for (pos = 0; pos < 180; pos++) {
     servo.write(pos);
     delay(10);
   }
+  Status = "Geopend";
 }
 
 void closeBin () {
-  delay (5000);
   for (pos = 180; pos > 0; pos--) {
     servo.write(pos);
     delay(10);
   }
+  Status = "Gesloten";
 }
 
 void runServer()
@@ -83,16 +89,21 @@ void runServer()
         while (pos < 180) {
           openBin();
         }
-        ethernetClient.print("Open");
+        ethernetClient.print(Status);
+      } 
+      else if(String(buffer) == String("close"))
+      {
         while (pos > 0) {
           closeBin();
         }
-        ethernetClient.print("Close");
-        //else if (String(buffer) == String("test")) {
-        //ethernetClient.print("Close");
-      } else if (String(buffer) == String("checkIP"))
+        ethernetClient.print(Status);
+      } 
+      else if (String(buffer) == String("checkIP"))
       {
         ethernetClient.print("correct");
+      } else if (String(buffer) == String("status"))
+      {
+        ethernetClient.print(Status);
       }
     }
   }
