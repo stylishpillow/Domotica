@@ -20,12 +20,23 @@ namespace smart_bin
             InitializeComponent();
         }
 
-        private void OpenBin(object sender, EventArgs e)
+        private async void SetIP(object sender, EventArgs e)
         {
-            // 1e parameter is het ipaddress van de arduino 2e is poort 80 als het goed is heeft arduino dat ook en 3e is het bericht wat je verstuurd
-            //als je force stuurt krijg je "gelukt" terug en anders verstuurd hij het verstuurde bericht terug 
-            string ip = ipaddress.Text;
-            status.Text = client.ask(ip, 80, "open");
+            string ip_address = ipaddress_1.Text+".";
+            ip_address += ipaddress_2.Text+".";
+            ip_address += ipaddress_3.Text+".";
+            ip_address += ipaddress_4.Text;
+
+            string checkIP = client.ask(ip_address, 80, "checkIP");
+            if(checkIP == "correct")
+            {
+                await Navigation.PushModalAsync(new SmartBin(ip_address));
+            } else
+            {
+               await DisplayAlert("Fout!", "Het ingevulde IP adres is incorrect", "sluiten");
+
+            }
+
         }
     }
 }

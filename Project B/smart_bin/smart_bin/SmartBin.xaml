@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="smart_bin.SmartBin">
+    <ContentPage.Content>
+        <StackLayout Padding="40" BackgroundColor="CornflowerBlue">
+            <Label Text="Smart Prullenbak" HorizontalTextAlignment="Center" FontSize="30" TextColor="Black"></Label>
+
+            <Label VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Status: " FontSize="Medium" FontAttributes="Bold"/>
+                    <Span x:Name="status" Text="" FontSize="Medium" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Button x:Name="OpenBtn" Clicked="OpenBin" Text="Open" BackgroundColor="Green" TextColor="White" FontSize="20" FontAttributes="Bold" CornerRadius="10" Padding="20"></Button>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

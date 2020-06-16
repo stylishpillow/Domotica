@@ -65,14 +65,17 @@ namespace smart_bin
         /// <returns>message from arduino</returns>
         public string ask(string ipaddres, int portnr, string message)
         {
-            Socket s = open(ipaddres, portnr);
-            write(s, message);
-            string reply = read(s);
-            close(s);
-            return reply;
+            try
+            {
+                Socket s = open(ipaddres, portnr);
+                write(s, message);
+                string reply = read(s);
+                close(s);
+                return reply;
+            } catch(Exception)
+            {
+                return "Error";
+            }
         }
-
-
-
     }
 }

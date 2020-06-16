@@ -30,66 +30,69 @@ void distances () {
 
   duration = pulseIn(echoPin, HIGH);
   distance = (duration * 0.0343) / 2;
-
+ 
   Serial.print("Afstand: ");
   Serial.println(distance);
   if (distance > 0 && distance <= 20)
-   { 
-    while (pos < 180){
+  {
+    while (pos < 180) {
       openBin();
-      }
     }
-   else if (pos == 180 && (distance > 50 && distance < 1000)){
+  }
+  else if (pos == 180 && (distance > 50 && distance < 1000)) {
     closeBin();
-   }
+  }
 }
 
-void openBin (){
-  for (pos = 0; pos < 180; pos++){
-      servo.write(pos);
-      delay(10);
- }
-}
-
-void closeBin (){
-    delay (5000);  
-  for (pos = 180; pos > 0; pos--){
+void openBin () {
+  for (pos = 0; pos < 180; pos++) {
     servo.write(pos);
     delay(10);
- }
+  }
+}
+
+void closeBin () {
+  delay (5000);
+  for (pos = 180; pos > 0; pos--) {
+    servo.write(pos);
+    delay(10);
+  }
 }
 
 void runServer()
 {
-  if(!connected) return;
-  
+  if (!connected) return;
+
   EthernetClient ethernetClient = server.available();
-  if(!ethernetClient) return;
-  
-  while(ethernetClient.connected())
+  if (!ethernetClient) return;
+
+  while (ethernetClient.connected())
   {
     char buffer[128];
     int count = 0;
-    while(ethernetClient.available())
+    while (ethernetClient.available())
     {
       buffer[count++] = ethernetClient.read();
     }
     buffer[count] = '\0';
-    if(count > 0)
+    if (count > 0)
     {
       Serial.println(buffer);
-      if(String(buffer) == String("open"))
+      if (String(buffer) == String("open"))
       {
-        while (pos < 180){
-         openBin();
+        while (pos < 180) {
+          openBin();
         }
         ethernetClient.print("Open");
-        while (pos > 0){
+        while (pos > 0) {
           closeBin();
         }
         ethernetClient.print("Close");
-      //else if (String(buffer) == String("test")) {
+        //else if (String(buffer) == String("test")) {
         //ethernetClient.print("Close");
+      } else if (String(buffer) == String("checkIP"))
+      {
+        ethernetClient.print("correct");
       }
     }
   }
@@ -98,22 +101,21 @@ void runServer()
 void setup() {
   Serial.begin(115200);
 
-if(Ethernet.begin(mac) == 0) return;
-Serial.print("Listening on address: ");
-Serial.println(Ethernet.localIP());
-server.begin();
-connected= true;
+  if (Ethernet.begin(mac) == 0) return;
+  Serial.print("Listening on address: ");
+  Serial.println(Ethernet.localIP());
+  server.begin();
+  connected = true;
 
-  
+
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
-  servo.attach(7); 
+  servo.attach(7);
   servo.write(0);
 }
 
 void loop() {
-//  openclose();
+  //  openclose();
   runServer();
   distances();
 }
-    
