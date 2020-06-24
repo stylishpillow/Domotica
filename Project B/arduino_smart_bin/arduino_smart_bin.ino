@@ -42,7 +42,7 @@ void distances () {
     }
   }
   /**
-   * When the position (pos) is 180 (opened) the bin will be closed.
+   * When the position (pos) is 180 (opened) and the distance is greater than 50 cm the bin will be closed.
    */
   else if (pos == 180 && (distance > 50 && distance < 1000)) {
     delay (5000);
