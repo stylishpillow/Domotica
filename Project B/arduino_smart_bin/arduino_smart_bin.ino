@@ -17,9 +17,10 @@ Servo servo;  // create a servo object
 
 int pos = 0;
 
-//bool accuraat = true;
-
-//check distance from bin
+/**
+ * This function calculates the distance that is coming from the ultrasone sensor.
+ * And open and close the bin when the distance is on a specific number.
+ */
 void distances () {
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
@@ -30,15 +31,19 @@ void distances () {
 
   duration = pulseIn(echoPin, HIGH);
   distance = (duration * 0.0343) / 2;
- 
-//  Serial.print("Afstand: ");
-//  Serial.println(distance);
+
+  /**
+   * If this distance is between the 1 and 20 cm the bin will be opened.
+   */
   if (distance > 0 && distance <= 20)
   {
     while (pos < 180) {
       openBin();
     }
   }
+  /**
+   * When the position (pos) is 180 (opened) the bin will be closed.
+   */
   else if (pos == 180 && (distance > 50 && distance < 1000)) {
     delay (5000);
     closeBin();
@@ -48,7 +53,9 @@ void distances () {
 
 String Status = "Gesloten";
 
-
+/**
+ * This function open the bin with a for loop.
+ */
 void openBin () {
   for (pos = 0; pos < 180; pos++) {
     servo.write(pos);
@@ -56,6 +63,10 @@ void openBin () {
   }
   Status = "Geopend";
 }
+
+/**
+ * This function close the bin with a for loop.
+ */
 
 void closeBin () {
   for (pos = 180; pos > 0; pos--) {
@@ -125,7 +136,6 @@ void setup() {
 }
 
 void loop() {
-  //  openclose();
   runServer();
   distances();
 }
