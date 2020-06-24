@@ -76,6 +76,17 @@ void closeBin () {
   Status = "Gesloten";
 }
 
+/**
+ * Open connection for the client
+ * 
+ * if not connected do nothing
+ * if connected read the message from the app:
+ * 
+ * if message is "open": call function openBin() and send status to the client(app)
+ * if message is "close": call function closeBin() and send status to the client(app)
+ * if message is "checkIP": send "correct" to the client (app)
+ * if message is "status": send the status to the client (app)
+ */
 void runServer()
 {
   if (!connected) return;
@@ -124,6 +135,7 @@ void setup() {
   Serial.begin(115200);
 
   if (Ethernet.begin(mac) == 0) return;
+  
   Serial.print("Listening on address: ");
   Serial.println(Ethernet.localIP());
   server.begin();
@@ -131,6 +143,7 @@ void setup() {
 
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
+  
   servo.attach(7);
   servo.write(0);
 }
