@@ -20,6 +20,13 @@ namespace smart_bin
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Gets the ipaddres from text entries and check if ip is correct 
+        /// if the response from the arduino is equal to correct: open new page SmartBin
+        /// else: Display an error
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void SetIP(object sender, EventArgs e)
         {
             string ip_address = ipaddress_1.Text+".";

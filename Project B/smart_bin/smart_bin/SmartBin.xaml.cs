@@ -14,6 +14,7 @@ namespace smart_bin
     public partial class SmartBin : ContentPage
     {
         private string ipaddress;
+        
         Client client = new Client();
         public SmartBin(string ip)
         {
@@ -22,10 +23,17 @@ namespace smart_bin
             ReadStatus(ip);
         }
 
+        /// <summary>
+        /// If the button "openBtn" is clicked disable the button and send "open" to the arduino 
+        /// if the response is equal to Error: change the text color to red and Show "Er is iets mis gegaan"
+        /// else: change text to: arduino response ("open") and change the text color to green
+        /// wait 5 seconds and send "close" to the arduino. The response should be "gesloten" 
+        /// enable the button "OpenBtn"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void OpenBin(object sender, EventArgs e)
         {
-            // 1e parameter is het ipaddress van de arduino 2e is poort 80 als het goed is heeft arduino dat ook en 3e is het bericht wat je verstuurd
-            //als je force stuurt krijg je "gelukt" terug en anders verstuurd hij het verstuurde bericht terug 
             OpenBtn.IsEnabled = false;
             string open = client.ask(ipaddress, 80, "open");
 
@@ -44,7 +52,10 @@ namespace smart_bin
             OpenBtn.IsEnabled = true;
         }
 
-
+        /// <summary>
+        /// check the arduino status every second and change the label if the status is changed
+        /// </summary>
+        /// <param name="ip"></param>
         private async void ReadStatus(string ip)
         {
             while (true)
@@ -63,7 +74,6 @@ namespace smart_bin
                 }
 
                 await Task.Delay(1000);
-                //status.Text = client.ask(ipaddress, 80, "status");
             }
         }
     }
