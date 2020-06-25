@@ -33,7 +33,7 @@ void distances () {
  
 //  Serial.print("Afstand: ");
 //  Serial.println(distance);
-  if (distance > 0 && distance <= 20)
+  if (distance > 5 && distance <= 20)
   {
     while (pos < 180) {
       openBin();
